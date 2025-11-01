@@ -9,7 +9,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['hms-gt67.onrender.com', 'localhost', '127.0.0.1']
 
-# Installed apps
+# ✅ Installed apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'Hospital',
     'Doctor',
     'Patient',
+    'Appointment',   # ✅ keep only this one list
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-# WhiteNoise for static hosting
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ✅ Time zone and language
@@ -77,7 +77,10 @@ USE_I18N = True
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ✅ Custom user model
 AUTH_USER_MODEL = "Appointment.Accounts"
+
 # ✅ Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
